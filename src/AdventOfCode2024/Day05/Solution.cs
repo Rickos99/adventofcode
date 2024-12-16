@@ -8,7 +8,7 @@ internal record PageOrderRule(int First, int Then);
 [PuzzleInfo(5, "Print Queue")]
 internal sealed class Solution() : Puzzle(5)
 {
-    public override int SolveFirstPart()
+    public override long SolveFirstPart()
     {
         var (pageOrderRules, updates) = ParseInput();
         var ruleBook = CreateRuleBook(pageOrderRules);
@@ -19,7 +19,7 @@ internal sealed class Solution() : Puzzle(5)
             .Sum();
     }
 
-    public override int SolveSecondPart()
+    public override long SolveSecondPart()
     {
         var (pageOrderRules, updates) = ParseInput();
         var ruleBook = CreateRuleBook(pageOrderRules);

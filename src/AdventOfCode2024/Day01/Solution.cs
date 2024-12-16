@@ -3,7 +3,7 @@
 [PuzzleInfo(1, "Historian Hysteria")]
 internal sealed class Solution() : Puzzle(1)
 {
-    public override int SolveFirstPart()
+    public override long SolveFirstPart()
     {
         var (left, right) = ReadLists();
         left.Sort();
@@ -11,7 +11,7 @@ internal sealed class Solution() : Puzzle(1)
         return left.Zip(right, (l, r) => Math.Abs(l - r)).Sum();
     }
 
-    public override int SolveSecondPart()
+    public override long SolveSecondPart()
     {
         var (left, right) = ReadLists();
 

@@ -14,13 +14,13 @@ internal sealed record Left() : Direction(0, -1);
 [PuzzleInfo(6, "Guard Gallivant")]
 internal sealed class Solution() : Puzzle(6)
 {
-    public override int SolveFirstPart()
+    public override long SolveFirstPart()
     {
         var (map, guardPosition) = ReadMap();
         return Walk(map, guardPosition).visitedPositions.Count;
     }
 
-    public override int SolveSecondPart()
+    public override long SolveSecondPart()
     {
         var sc = Stopwatch.StartNew();
 

@@ -13,13 +13,13 @@ internal sealed record Dont() : Instruction;
 [PuzzleInfo(3, "Mull It Over")]
 internal partial class Solution() : Puzzle(3)
 {
-    public override int SolveFirstPart()
+    public override long SolveFirstPart()
     {
         var instructions = GetInstructions().Where(type => type is Mul).ToList();
         return Execute(instructions);
     }
 
-    public override int SolveSecondPart()
+    public override long SolveSecondPart()
     {
         var instructions = GetInstructions().ToList();
         return Execute(instructions);

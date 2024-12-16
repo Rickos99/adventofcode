@@ -13,6 +13,6 @@ public abstract class Puzzle
         _puzzleInput = File.ReadAllLines(filePath);
     }
 
-    abstract public int SolveFirstPart();
-    abstract public int SolveSecondPart();
+    abstract public long SolveFirstPart();
+    abstract public long SolveSecondPart();
 }
