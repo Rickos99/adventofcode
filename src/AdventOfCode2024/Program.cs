@@ -46,7 +46,7 @@ void ShowMenu()
 
     foreach (var puzzle in puzzles.OrderBy(puzzle => puzzle.info.Day))
     {
-        Console.WriteLine($"{puzzle.info.Day} - {puzzle.info.Name}");
+        Console.WriteLine($"{puzzle.info.Day,-2} - {puzzle.info.Name}");
     }
 
     Console.Write("Enter puzzle number to solve: ");
