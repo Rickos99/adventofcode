@@ -1,6 +1,6 @@
-﻿namespace AdventOfCode2024.Day10;
+﻿using AdventOfCode.Core.Models;
 
-internal record struct Position(int Row, int Col);
+namespace AdventOfCode2024.Day10;
 
 [PuzzleInfo(10, "Hoof It")]
 internal sealed class Solution() : Puzzle(10)

@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
+﻿using AdventOfCode.Core.Models;
+using System.Diagnostics;
 using System.Text;
 using Map = System.Collections.Generic.List<System.Collections.Generic.List<char>>;
 
 namespace AdventOfCode2024.Day06;
 
-internal record struct Position(int Row, int Col);
 internal record Direction(int Vertical, int Horizontal);
 internal sealed record Up() : Direction(-1, 0);
 internal sealed record Right() : Direction(0, 1);

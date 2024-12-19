@@ -1,8 +1,8 @@
-﻿using System.Text;
+﻿using AdventOfCode.Core.Models;
+using System.Text;
 
 namespace AdventOfCode2024.Day08;
 
-internal record struct Position(int Row, int Col);
 
 [PuzzleInfo(8, "Resonant Collinearity")]
 internal sealed class Solution() : Puzzle(8)
