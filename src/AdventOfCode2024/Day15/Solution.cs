@@ -31,20 +31,20 @@ internal record Warehouse(List<List<char>> Map, bool HasWideBoxes)
 [PuzzleInfo(15, "Warehouse Woes")]
 internal sealed class Solution() : Puzzle(15)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         var (warehouse, instructions, robot) = ParseInput(useWideBoxes: false);
 
         ExecuteInstructions(warehouse, instructions, robot, interactive: false);
-        return BoxGoordinateSum(warehouse);
+        return BoxGoordinateSum(warehouse).ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         var (warehouse, instructions, robot) = ParseInput(useWideBoxes: true);
 
         ExecuteInstructions(warehouse, instructions, robot, interactive: false);
-        return BoxGoordinateSum(warehouse);
+        return BoxGoordinateSum(warehouse).ToString();
     }
 
     private static long BoxGoordinateSum(Warehouse warehouse)

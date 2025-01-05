@@ -5,8 +5,8 @@ internal sealed class Solution() : Puzzle(11)
 {
     private readonly static Dictionary<(long stone, int blinks), long> _memo = [];
 
-    public override long SolveFirstPart() => Solve(GetStones(), 25);
-    public override long SolveSecondPart() => Solve(GetStones(), 75);
+    public override string SolveFirstPart() => Solve(GetStones(), 25).ToString();
+    public override string SolveSecondPart() => Solve(GetStones(), 75).ToString();
 
     private static long Solve(List<long> stones, int blinks)
     {

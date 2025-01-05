@@ -9,9 +9,9 @@ internal record struct Prize(long X, long Y)
 [PuzzleInfo(13, "Claw Contraption")]
 internal sealed class Solution() : Puzzle(13)
 {
-    public override long SolveFirstPart() => PushButtons(adjustForConversion: false);
+    public override string SolveFirstPart() => PushButtons(adjustForConversion: false).ToString();
 
-    public override long SolveSecondPart() => PushButtons(adjustForConversion: true);
+    public override string SolveSecondPart() => PushButtons(adjustForConversion: true).ToString();
 
     private long PushButtons(bool adjustForConversion)
     {

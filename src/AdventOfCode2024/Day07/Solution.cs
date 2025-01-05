@@ -5,18 +5,20 @@ internal record struct Equation(long Value, List<long> Terms);
 [PuzzleInfo(7, "Bridge Repair")]
 internal sealed class Solution() : Puzzle(7)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         return ReadEquations()
             .Where(equation => Evaluates(equation, equation.Terms[0], 0))
-            .Sum(equation => equation.Value);
+            .Sum(equation => equation.Value)
+            .ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         return ReadEquations()
             .Where(equation => Evaluates(equation, equation.Terms[0], 0, allowConcatenation: true))
-            .Sum(equation => equation.Value);
+            .Sum(equation => equation.Value)
+            .ToString();
     }
 
     private bool Evaluates(Equation equation, long accumulated, int termIndex, bool allowConcatenation = false)

@@ -10,14 +10,14 @@ internal record struct Report(List<int> Levels)
 [PuzzleInfo(2, "Red-Nosed Reports")]
 internal sealed class Solution() : Puzzle(2)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
-        return GetReports().Count(IsValidReport);
+        return GetReports().Count(IsValidReport).ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
-        return GetReports().Count(IsValidReportWithDampener);
+        return GetReports().Count(IsValidReportWithDampener).ToString();
     }
 
     private bool IsValidReport(Report report)

@@ -8,7 +8,7 @@ internal record PageOrderRule(int First, int Then);
 [PuzzleInfo(5, "Print Queue")]
 internal sealed class Solution() : Puzzle(5)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         var (pageOrderRules, updates) = ParseInput();
         var ruleBook = CreateRuleBook(pageOrderRules);
@@ -16,10 +16,10 @@ internal sealed class Solution() : Puzzle(5)
         return updates
             .Where(update => UpdateIsValid(update, ruleBook))
             .Select(update => update[update.Count / 2])
-            .Sum();
+            .Sum().ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         var (pageOrderRules, updates) = ParseInput();
         var ruleBook = CreateRuleBook(pageOrderRules);
@@ -34,7 +34,8 @@ internal sealed class Solution() : Puzzle(5)
         return updates
             .Where(update => !UpdateIsValid(update, ruleBook))
             .Select(update => update.Order(comparer).ToList())
-            .Sum(update => update[update.Count / 2]);
+            .Sum(update => update[update.Count / 2])
+            .ToString();
     }
 
     private bool UpdateIsValid(Update update, Dictionary<int, HashSet<int>> rulebook)

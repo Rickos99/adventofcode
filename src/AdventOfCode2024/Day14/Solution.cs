@@ -10,17 +10,17 @@ internal sealed partial class Solution() : Puzzle(14)
     private const int _spaceHeight = 103;
     private const int _spaceWidth = 101;
 
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         var robots = GetRobots();
         for (var second = 0; second < 100; second++)
         {
             robots.ForEach(robot => robot.Move());
         }
-        return SafetyFactor(robots);
+        return SafetyFactor(robots).ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         var robots = GetRobots();
         for (var second = 1; ; second++)
@@ -33,7 +33,7 @@ internal sealed partial class Solution() : Puzzle(14)
                 if (RobotClusterAreaSize(robot.Position, robotPositions) > robots.Count / 3)
                 {
                     PrintSpace(robots);
-                    return second;
+                    return second.ToString();
                 }
             }
         }

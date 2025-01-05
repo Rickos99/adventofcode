@@ -8,9 +8,9 @@ public record struct RegionInformation(int Area, int Perimeter, int Sides);
 [PuzzleInfo(12, "Garden Groups")]
 internal sealed class Solution() : Puzzle(12)
 {
-    public override long SolveFirstPart() => GetRegionInformation().Sum(region => region.Area * region.Perimeter);
+    public override string SolveFirstPart() => GetRegionInformation().Sum(region => region.Area * region.Perimeter).ToString();
 
-    public override long SolveSecondPart() => GetRegionInformation().Sum(region => region.Area * region.Sides);
+    public override string SolveSecondPart() => GetRegionInformation().Sum(region => region.Area * region.Sides).ToString();
 
     private IEnumerable<RegionInformation> GetRegionInformation()
     {

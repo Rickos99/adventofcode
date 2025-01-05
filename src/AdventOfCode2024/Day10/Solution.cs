@@ -5,11 +5,11 @@ namespace AdventOfCode2024.Day10;
 [PuzzleInfo(10, "Hoof It")]
 internal sealed class Solution() : Puzzle(10)
 {
-    public override long SolveFirstPart()
-        => GetStartPositions().Sum(startPosition => Trails(startPosition, [], false));
+    public override string SolveFirstPart()
+        => GetStartPositions().Sum(startPosition => Trails(startPosition, [], false)).ToString();
 
-    public override long SolveSecondPart()
-        => GetStartPositions().Sum(startPosition => Trails(startPosition, [], true));
+    public override string SolveSecondPart()
+        => GetStartPositions().Sum(startPosition => Trails(startPosition, [], true)).ToString();
 
     private int Trails(Position position, HashSet<Position> visitedPositions, bool distinctTrails)
     {

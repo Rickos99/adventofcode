@@ -9,18 +9,18 @@ internal sealed class File(int? Id, int BlockSize)
 [PuzzleInfo(9, "Disk Fragmenter")]
 internal sealed class Solution() : Puzzle(9)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         var blocks = ReadBlocksFromDisk();
         MoveFiles(blocks);
-        return Checksum(blocks);
+        return Checksum(blocks).ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         var files = ReadFilesFromDisk();
         MoveFiles(files);
-        return Checksum(files);
+        return Checksum(files).ToString();
     }
 
     private static long Checksum(List<File> files)

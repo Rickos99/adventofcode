@@ -7,7 +7,7 @@ namespace AdventOfCode2024.Day08;
 [PuzzleInfo(8, "Resonant Collinearity")]
 internal sealed class Solution() : Puzzle(8)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         var map = ReadMap();
         var antennas = CreateAntennaGroups(map);
@@ -15,10 +15,10 @@ internal sealed class Solution() : Puzzle(8)
         var antiNodes = CalculateAntiNodes(antennaPairs, map, continousAntiNodes: false);
         //Console.WriteLine(map.ToString(antiNodes));
 
-        return antiNodes.Count;
+        return antiNodes.Count.ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         var map = ReadMap();
         var antennas = CreateAntennaGroups(map);
@@ -26,7 +26,7 @@ internal sealed class Solution() : Puzzle(8)
         var antiNodes = CalculateAntiNodes(antennaPairs, map, continousAntiNodes: true);
         //Console.WriteLine(map.ToString(antiNodes));
 
-        return antiNodes.Count;
+        return antiNodes.Count.ToString();
     }
 
     private static HashSet<Position> CalculateAntiNodes(IEnumerable<(Position antennaA, Position antennaB)> antennaPairs, Map map, bool continousAntiNodes)

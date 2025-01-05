@@ -3,15 +3,15 @@
 [PuzzleInfo(1, "Historian Hysteria")]
 internal sealed class Solution() : Puzzle(1)
 {
-    public override long SolveFirstPart()
+    public override string SolveFirstPart()
     {
         var (left, right) = ReadLists();
         left.Sort();
         right.Sort();
-        return left.Zip(right, (l, r) => Math.Abs(l - r)).Sum();
+        return left.Zip(right, (l, r) => Math.Abs(l - r)).Sum().ToString();
     }
 
-    public override long SolveSecondPart()
+    public override string SolveSecondPart()
     {
         var (left, right) = ReadLists();
 
@@ -23,7 +23,7 @@ internal sealed class Solution() : Puzzle(1)
             .Where(rightIndex.ContainsKey)
             .Sum(left => left * rightIndex[left]);
 
-        return similarityScore;
+        return similarityScore.ToString();
     }
 
     private (List<int> left, List<int> right) ReadLists()
